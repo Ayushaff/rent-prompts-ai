@@ -25,8 +25,8 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "DATABASE_URI=${{ DATABASE_URI }}" > .env
-          echo "PAYLOAD_SECRET=${{ PAYLOAD_SECRET }}" >> .env
+          echo "DATABASE_URI=${{ secrets.DATABASE_URI }}" > .env
+          echo "PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}" >> .env
           echo "PAYLOAD_PUBLIC_SERVER_URL=${{ secrets.PAYLOAD_PUBLIC_SERVER_URL }}" >> .env
           echo "NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}" >> .env
           echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env
