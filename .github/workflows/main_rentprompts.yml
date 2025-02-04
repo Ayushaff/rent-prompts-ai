@@ -85,6 +85,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'rentprompts'
-          slot-name: 'Production'
           package: .
           
