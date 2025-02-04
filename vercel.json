@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "src/collections/PrivateRapps/endpoints/getRapps.ts": {
+        "maxDuration": 60
+      }
+    }
+  }
+  
