@@ -23,6 +23,22 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Create .env file
+        run: |
+          echo "DATABASE_URI=${{ secrets.DATABASE_URI }}" > .env
+          echo "PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}" >> .env
+          echo "PAYLOAD_PUBLIC_SERVER_URL=${{ secrets.PAYLOAD_PUBLIC_SERVER_URL }}" >> .env
+          echo "NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}" >> .env
+          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_BUCKET_NAME=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_BUCKET_NAME }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_ACCESS_KEY=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_ACCESS_KEY }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_SECRET_KEY=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_SECRET_KEY }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_BUCKET_NAME=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_BUCKET_NAME }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_ACCESS_KEY=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_ACCESS_KEY }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_SECRET_KEY=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_SECRET_KEY }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_ENDPOINT=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_ENDPOINT }}" >> .env
+          echo "PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_R2=${{ secrets.PAYLOAD_PUBLIC_CLOUDFLARE_PUBLIC_R2 }}" >> .env 
+          
       - name: npm install, build, and test
         run: |
           npm install --legacy-peer-deps
