@@ -40,6 +40,7 @@ const nextConfig = {
   devIndicators: {
     appIsrStatus: false,
   },
+  output:'standalone'
 }
 
 export default withPayload(nextConfig)
