@@ -43,7 +43,6 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import { Category } from './collections/Categories'
 import { Tags } from './collections/Tags'
 import dotenv from 'dotenv'
-
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -58,7 +57,7 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
 }
 
 dotenv.config({
-  path: path.resolve(__dirname, '../../.env'),
+  path: path.resolve(__dirname, '../.env'),
 })
 export default buildConfig({
   admin: {
